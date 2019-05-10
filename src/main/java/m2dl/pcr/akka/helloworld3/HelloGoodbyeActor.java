@@ -4,7 +4,11 @@ import akka.actor.UntypedActor;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 import akka.japi.Procedure;
-
+/*
+1 . Les états de l'ateur
+2 . retourner a l'etat de base
+3 . Changer l'état pour le prochain comportement
+*/
 
 public class HelloGoodbyeActor extends UntypedActor {
     LoggingAdapter log = Logging.getLogger(getContext().system(), this);
