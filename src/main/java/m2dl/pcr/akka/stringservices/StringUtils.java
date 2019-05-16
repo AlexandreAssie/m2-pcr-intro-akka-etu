@@ -55,10 +55,10 @@ public class StringUtils {
     /* juste pour le test */
     public static void main(String args[]) {
         String s=args[0];
-        System.out.println(s);
-        System.out.println(crypte(s));
-        System.out.println(decrypte(crypte(s)));
-        System.out.println(ajouteCtrl(s));
-        System.out.println(verifieCtrl(ajouteCtrl(s)));
+//        System.out.println(s);
+//        System.out.println(crypte(s));
+//        System.out.println(decrypte(crypte(s)));
+//        System.out.println(ajouteCtrl(s));
+//        System.out.println(verifieCtrl(ajouteCtrl(s)));
     }
 }
