@@ -1,7 +1,6 @@
-package m2dl.pcr.akka.exo3;
+package m2dl.pcr.akka.exo4;
 
 import akka.actor.ActorRef;
-import akka.actor.dsl.Creators;
 
 import java.io.Serializable;
 
@@ -9,11 +8,11 @@ public class Param implements Serializable {
 
     private String message;
 
-    private ActorRef reference;
+    private String client;
 
-    public Param(String message, ActorRef reference) {
+    public Param(String message, String client) {
         this.message = message;
-        this.reference = reference;
+        this.client = client;
     }
 
     public String getMessage() {
@@ -24,11 +23,12 @@ public class Param implements Serializable {
         this.message = message;
     }
 
-    public ActorRef getReference() {
-        return reference;
+    public String getClient() {
+        return client;
     }
 
-    public void setReference(ActorRef reference) {
-        this.reference = reference;
+    public void setClient(String client) {
+        this.client = client;
     }
+
 }

@@ -1,4 +1,4 @@
-package m2dl.pcr.akka.exo3;
+package m2dl.pcr.akka.exo4;
 
 import akka.actor.UntypedActor;
 import akka.event.Logging;
@@ -7,13 +7,15 @@ import m2dl.pcr.akka.stringservices.StringUtils;
 
 public class RecepteurActor extends UntypedActor {
 
-    LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+    private LoggingAdapter log = Logging.getLogger(getContext().system(), this);
 
-    @Override
-    public void onReceive(Object o) throws Exception {
-        Param param = (Param) o;
-        String message = param.getMessage();
-        log.info(StringUtils.crypte(StringUtils.verifieCtrl(message)));
-
+    public void onReceive(Object msg) throws Exception {
+        if (msg instanceof String) {
+            String message = StringUtils.decrypte(StringUtils.verifieCtrl((String) msg));
+            log.info("\n\tMessage reçu : " + message);
+        } else {
+            unhandled(msg);
+        }
     }
+
 }
